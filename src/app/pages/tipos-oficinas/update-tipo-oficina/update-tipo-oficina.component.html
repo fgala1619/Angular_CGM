@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Actualizar Tipo Oficina</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Editar Tipo Oficina</h2>
+      <form [formGroup]="form" (ngSubmit)="updateTipoOficina()">
+        <!--identificador-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="identificador" class="form-label">Identificador</label>
+             <input type="text" name="identificador" id="identificador" formControlName="identificador" class="form-control"
+             placeholder="identificador" minlength="1" maxlength="2">
+          </div>
+         </div>
+         <!--descripcion-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="descripcion" class="form-label">Descripción</label>
+             <input type="text" name="descripcion" id="descripcion" formControlName="descripcion" class="form-control"
+             placeholder="descripcion" maxlength="50">
+          </div>
+        </div>
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Actualizar" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/tipos-oficinas">Volver</a>
+  </div>
+</div>
+
+
+
+
+

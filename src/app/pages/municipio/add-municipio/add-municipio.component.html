@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Crear Municipio</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Crear Municipio</h2>
+      <form [formGroup]="form" (ngSubmit)="addMunicipio()">
+        <!--id_municipio-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_municipio" class="form-label">IdMunicipio</label>
+             <input type="text" name="id_municipio" id="id_municipio" formControlName="id_municipio" class="form-control"
+             placeholder="id_municipio" minlength="4" maxlength="4">
+          </div>
+         </div>
+         <!--nombre-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" name="nombre" id="nombre" formControlName="nombre" class="form-control"
+             placeholder="nombre" maxlength="50">
+          </div>
+        </div>
+
+         <!--provincia_id-->
+
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="provincia_id" class="form-label">Provincias</label>
+            <select class="form-control select2bs4" id="provincia_id" formControlName="provincia_id" style="width: 100%;" required>
+              <option *ngFor="let prov of provincias" value="{{ prov.id }}">{{ prov.id_provincia }}-{{ prov.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Crear" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/municipio">Volver</a>
+  </div>
+</div>
+
+
+
+

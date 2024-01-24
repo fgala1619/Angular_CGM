@@ -1,0 +1,16 @@
+export default interface OCCM{
+  id:number,
+  id_occm: string,
+  nit: string,
+  descripcion:string,
+  direccion:string,
+  telefono:string,
+  es_distrito:boolean,
+  ofic_con_distrito:boolean,
+  activo: boolean,
+  distrito_id: number,
+  municipio_id: number,
+  provincia_id: number,
+  padre_id: number,
+  tipo_oficina_id: number,
+}

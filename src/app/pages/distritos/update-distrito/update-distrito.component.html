@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Actualizar Distrito</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Editar Distrito</h2>
+      <form [formGroup]="form" (ngSubmit)="updateDistrito()">
+        <!--id_distrito-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_distrito" class="form-label">IdDistrito</label>
+             <input type="text" name="id_distrito" id="id_distrito" formControlName="id_distrito" class="form-control"
+             placeholder="id_distrito" minlength="4" maxlength="4">
+          </div>
+         </div>
+         <!--nombre-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" name="nombre" id="nombre" formControlName="nombre" class="form-control"
+             placeholder="nombre" maxlength="50">
+          </div>
+         </div>
+
+         <!--municipio_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="municipio_id" class="form-label">Municipios</label>
+            <select class="form-control select2bs4" id="municipio_id" formControlName="municipio_id" style="width: 100%;">
+              <option *ngFor="let municp of municipios" value="{{ municp.id }}">{{ municp.id_municipio }}-{{ municp.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--occm_id-->
+
+         <!-- <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="occm_id" class="form-label">OCCM</label>
+            <select class="form-control select2bs4" id="occm_id" formControlName="occm_id" style="width: 100%;" required>
+              <option *ngFor="let occm of occms" value="{{ occm.id }}">{{ occm.descripcion }}</option>
+            </select>
+          </div>
+        </div> -->
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="submit" value="Actualizar" class="btn btn-primary w-100">
+            <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/distritos">Volver</a>
+  </div>
+</div>
+
+
+
+
+
+

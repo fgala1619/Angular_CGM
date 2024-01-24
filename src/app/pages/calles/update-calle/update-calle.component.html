@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Actualizar Calle</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Editar Calle</h2>
+      <form [formGroup]="form" (ngSubmit)="updateCalle()">
+        <!--id_calle-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_calle" class="form-label">Id-Calle</label>
+             <input type="text" name="id_calle" id="id_calle" formControlName="id_calle" class="form-control"
+             placeholder="id_calle" maxlength="100">
+          </div>
+         </div>
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Actualizar" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/calles">Volver</a>
+  </div>
+</div>
+
+
+
+
+

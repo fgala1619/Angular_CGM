@@ -1,0 +1,128 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Actualizar OCCM</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Editar OCCM</h2>
+      <form [formGroup]="form" (ngSubmit)="updateOCCM()">
+        <!--id_occm-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_occm" class="form-label">Id-OCCM</label>
+             <input type="text" name="id_occm" id="id_occm" formControlName="id_occm" class="form-control"
+             placeholder="id_occm" minlength="4" maxlength="4">
+          </div>
+         </div>
+         <!--descripcion-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="descripcion" class="form-label">Descripción</label>
+             <input type="text" name="descripcion" id="descripcion" formControlName="descripcion" class="form-control"
+             placeholder="descripcion" maxlength="50">
+          </div>
+         </div>
+
+         <!--direccion-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="direccion" class="form-label">Dirección</label>
+             <input type="text" name="direccion" id="direccion" formControlName="direccion" class="form-control"
+             placeholder="direccion" maxlength="50">
+          </div>
+         </div>
+
+          <!--telefono-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+               <label for="telefono" class="form-label">Teléfono</label>
+               <input type="text" name="telefono" id="telefono" formControlName="telefono" class="form-control"
+               placeholder="telefono" maxlength="10">
+            </div>
+           </div>
+
+        <!--tipo_oficina_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="tipo_oficina_id" class="form-label">Tipo de Oficina</label>
+            <select class="form-control select2bs4" id="tipo_oficina_id" formControlName="tipo_oficina_id" style="width: 100%;">
+              <option *ngFor="let tipoOfic of tipoOficinas" value="{{ tipoOfic.id }}">{{ tipoOfic.descripcion }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--es_distrito-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label>
+              Es Distrito<br>
+              <input type="checkbox" name="es_distrito" id="es_distrito" formControlName="es_distrito">
+             </label>
+          </div>
+         </div>
+
+         <!--ofic_con_distrito-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label>
+              Oficina Con Distrito<br>
+              <input type="checkbox" name="ofic_con_distrito" id="ofic_con_distrito" formControlName="ofic_con_distrito">
+             </label>
+          </div>
+         </div>
+
+         <!--provincia_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="provincia_id" class="form-label">Provincias</label>
+            <select class="form-control select2bs4" id="provincia_id" formControlName="provincia_id" style="width: 100%;">
+              <option *ngFor="let prov of provincias" value="{{ prov.id }}">{{ prov.id_provincia }}-{{ prov.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--municipio_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="municipio_id" class="form-label">Municipios</label>
+            <select class="form-control select2bs4" id="municipio_id" formControlName="municipio_id" style="width: 100%;">
+              <option *ngFor="let municp of municipios" value="{{ municp.id }}">{{ municp.id_municipio }}-{{ municp.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--distrito_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="distrito_id" class="form-label">Distritos</label>
+            <select class="form-control select2bs4" id="distrito_id" formControlName="distrito_id" style="width: 100%;">
+              <option *ngFor="let dist of distritos" value="{{ dist.id }}">{{ dist.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Actualizar" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/occm">Volver</a>
+  </div>
+</div>
+
+
+
+
+
+
+

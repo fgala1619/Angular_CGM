@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Actualizar Provincia</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Editar Provincia</h2>
+      <form [formGroup]="form" (ngSubmit)="updateProvincia()">
+        <!--id_provincia-->
+        <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_provincia" class="form-label">IdProvincia</label>
+             <input type="text" name="id_provincia" id="id_provincia" formControlName="id_provincia" class="form-control"
+             minlength="2" maxlength="2">
+          </div>
+         </div>
+         <!--nombre-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" name="nombre" id="nombre" formControlName="nombre" class="form-control">
+          </div>
+         </div>
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Actualizar" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/provincia">Volver</a>
+  </div>
+</div>
+
+
+
+

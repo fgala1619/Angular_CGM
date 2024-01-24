@@ -1,0 +1,137 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-icon-button [matMenuTriggerFor]="tools" mat-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #tools="matMenu">
+    <button [matMenuTriggerFor]="nomencladores" mat-menu-item>Nomencladores</button>
+  </mat-menu>
+  <mat-menu #nomencladores="matMenu">
+    <button [matMenuTriggerFor]="divisiones" mat-menu-item>Divisiones</button>
+    <button [matMenuTriggerFor]="tipos" mat-menu-item>Tipos</button>
+    <button [matMenuTriggerFor]="conceptos" mat-menu-item>Conceptos</button>
+    <button [matMenuTriggerFor]="rangos" mat-menu-item>Rangos</button>
+    <button [matMenuTriggerFor]="cuentasbancarias" mat-menu-item>Cuentas Bancarias</button>
+    <button [matMenuTriggerFor]="categoriasmultas" mat-menu-item>Categorías de las Multas</button>
+    <button mat-menu-item>Decretos Ley</button>
+    <button mat-menu-item>Artículos</button>
+    <button mat-menu-item>Situaciones Laborales</button>
+    <button mat-menu-item>Categorías de Peligrosidad</button>
+  </mat-menu>
+
+  <mat-menu #divisiones="matMenu">
+    <button mat-menu-item (click)="compProv()">Provincias</button>
+    <button mat-menu-item (click)="compMunicipio()">Municipios</button>
+    <button mat-menu-item (click)="compDistritos()">Distritos</button>
+    <button mat-menu-item (click)="compConsejPopulares()">Consejos Populares</button>
+    <button mat-menu-item (click)="compCalles()">Calles</button>
+    <button mat-menu-item (click)="compOCCM()">OCCM </button>
+    <button mat-menu-item (click)="compOrganismos()">Organismos</button>
+  </mat-menu>
+
+  <mat-menu #tipos="matMenu">
+    <button mat-menu-item>Tipos de Multas</button>
+    <button mat-menu-item>Tipos de Documentos</button>
+    <button mat-menu-item>Tipos de Cobro</button>
+    <button mat-menu-item (click)="compTiposOficina()">Tipos de Oficinas</button>
+    <button mat-menu-item>Tipos de Operaciones</button>
+    <button mat-menu-item>Tipos de Ajuste</button>
+    <button mat-menu-item>Tipos de Calendarios</button>
+  </mat-menu>
+
+  <mat-menu #conceptos="matMenu">
+    <button mat-menu-item>Conceptos de Ajuste</button>
+    <button mat-menu-item>Conceptos de Anulación</button>
+    <button mat-menu-item>Conceptos de Cancelación</button>
+    <button mat-menu-item>Consejos Populares</button>
+    <button mat-menu-item>Conceptos de Traslado</button>
+    <button mat-menu-item>Conceptos de Devolución</button>
+    <button mat-menu-item>Conceptos OC-8</button>
+    <button mat-menu-item>Conceptos de OC-11</button>
+  </mat-menu>
+
+  <mat-menu #rangos="matMenu">
+    <button mat-menu-item>Rangos de Cantidad</button>
+    <button mat-menu-item>Rangos de Importe</button>
+  </mat-menu>
+
+  <mat-menu #cuentasbancarias="matMenu">
+    <button mat-menu-item>Monedas</button>
+    <button mat-menu-item>Cuentas Bancarias</button>
+  </mat-menu>
+
+  <mat-menu #categoriasmultas="matMenu">
+    <button mat-menu-item>Situaciones de las Multas</button>
+    <button mat-menu-item>Estados de las Multas</button>
+  </mat-menu>
+
+  <!-- <button mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button> -->
+  <span>CGM</span>
+  <!--<button mat-button>Tools</button>-->
+</mat-toolbar>
+
+
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Organismo</h3>
+  </div>
+  <div class="card-body">
+    <section class="content">
+      <div class="container-fluid">
+        <!-- /.row -->
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Datos Generales de los Organismos</h3>
+              </div>
+              <div class="card-header">
+                <button class="btn btn-primary" routerLink="/nomencladores/divisiones/crear/organismo">Crear Organismo</button>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Id-Organismo</th>
+                      <th>Nombre</th>
+                      <th>Asociado</th>
+                      <th>Organismo Asociado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let organismo of organismos">
+                      <td>{{ organismo.id_organismo }}</td>
+                      <td>{{ organismo.nombre }}</td>
+                      <td>{{ organismo.asociado }}</td>
+                      <td>{{ organismo.asociado_id }}</td>
+                      <td>
+                        <button class="btn btn-primary" routerLink="/nomencladores/divisiones/editar/organismo/{{ organismo.id }}">
+                          Editar
+                        </button>
+                        <button class="btn btn-danger mx-2" (click)="eliminarOrganismo(organismo.id)">Eliminar</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/dashboard">Inicio</a>
+  </div>
+</div>
+
+
+

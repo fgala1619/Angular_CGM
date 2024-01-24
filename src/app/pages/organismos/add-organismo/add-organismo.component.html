@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Crear Organismo</h3>
+  </div>
+  <div class="card-body">
+    <div class="mx-auto w-25" style="max-width: 100%;">
+      <h2 class="text-center mb-3">Crear Organismo</h2>
+      <form [formGroup]="form" (ngSubmit)="addOrganismo()">
+        <!--id_organismo-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="id_organismo" class="form-label">Id-Organismo</label>
+             <input type="text" name="id_organismo" id="id_organismo" formControlName="id_organismo" class="form-control"
+             placeholder="id_organismo" minlength="3" maxlength="5">
+          </div>
+         </div>
+         <!--nombre-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="nombre" class="form-label">Nombre</label>
+             <input type="text" name="nombre" id="nombre" formControlName="nombre" class="form-control"
+             placeholder="nombre" maxlength="50">
+          </div>
+         </div>
+
+        <!--tipo_multa_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="tipo_multa_id" class="form-label">Tipo de Multa</label>
+            <select class="form-control select2bs4" id="tipo_multa_id" formControlName="tipo_multa_id" style="width: 100%;">
+              <option *ngFor="let tipoMulta of tipoMultas" value="{{ tipoMulta.id }}">{{ tipoMulta.descripcion }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--asociado_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="asociado_id" class="form-label">Organismo Asociado</label>
+            <select class="form-control select2bs4" id="asociado_id" formControlName="asociado_id" style="width: 100%;">
+              <option *ngFor="let asoc of asociados" value="{{ asoc.id }}">{{ asoc.nombre }}</option>
+            </select>
+          </div>
+         </div>
+
+         <!--asociado-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label>
+              Asociado<br>
+              <input type="checkbox" name="asociado" id="asociado" formControlName="asociado">
+             </label>
+          </div>
+         </div>
+
+         <!--decreto_ley_id-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+            <label for="decreto_ley_id" class="form-label">Decreto Ley</label>
+            <select class="form-control select2bs4" multiple="multiple" id="decreto_ley_id"
+            formControlName="decreto_ley_id" style="width: 100%;">
+              <option *ngFor="let decretoL of decretoLey" value="{{ decretoL.id }}">{{ decretoL.descripcion }}</option>
+            </select>
+          </div>
+        </div>
+
+         <!--boton-->
+         <div class="row">
+          <div class="col-md-12 form-group">
+             <input type="submit" value="Crear" class="btn btn-primary w-100">
+             <div>{{ mensaje }}</div>
+          </div>
+         </div>
+
+      </form>
+    </div>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-12 form-group mb-3">
+    <a class="navbar-lightblue" routerLink="/nomencladores/divisiones/organismos">Volver</a>
+  </div>
+</div>
+
+
+
+
+
+
+
